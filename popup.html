@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>
+      KawalCOVID19 untuk mengurai derasnya informasi seputar COVID-19
+    </title>
+  </head>
+  <link
+    href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+
+  <body>
+    <header>
+      <img src="./images/icon.png" alt="" />
+      <h1 class="jumbotron">
+        Data COVID-19 di Indonesia yang diperbaharui secara tepat dan akurat.
+      </h1>
+    </header>
+
+    <div class="container">
+      <div class="box">
+        <span class="number yellow" id="confirmed">-</span>
+        <span class="label">Terkonfirmasi</span>
+      </div>
+      <div class="box">
+        <span class="number orange" id="activeCare">-</span>
+        <span class="label">Dirawat</span>
+      </div>
+      <div class="box">
+        <span class="number green" id="recovered">-</span>
+        <span class="label">Sembuh</span>
+      </div>
+      <div class="box">
+        <span class="number red" id="deceased">-</span>
+        <span class="label">Meninggal</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="info">Pembaruan Terakhir</span>
+      <span class="date" id="metadata"></span>
+    </div>
+
+    <div class="credits">
+      Informasi Lengkap di
+      <a href="https://kawalcovid19.id" target="_blank"
+        >http://kawalcovid19.id/</a
+      >
+      <br />
+      Developed by: <a href="https://kopi.dev" target="_blank">Kopi.dev</a>
+    </div>
+  </body>
+  <script src="./popup.js"></script>
+</html>

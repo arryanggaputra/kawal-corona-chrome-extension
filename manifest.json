@@ -1,0 +1,23 @@
+{
+  "name": "Kawal Corona Indonesia.",
+  "description": "Dapatkan informasi seputar COVID-19 di Indonesia secara tepat dan cepat melalui browser anda.",
+  "manifest_version": 2,
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.0.3",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "storage",
+    "https://kawalcovid19.id/*",
+    "https://api.kawalcovid19.id/*"
+  ],
+  "icons": {
+    "128": "images/icon-128.png",
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png"
+  }
+}
