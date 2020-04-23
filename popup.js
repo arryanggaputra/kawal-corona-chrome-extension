@@ -10,25 +10,32 @@ const monthNames = [
   "September",
   "Oktober",
   "November",
-  "Desember"
+  "Desember",
 ];
 
-window.onload = async function() {
-  let doFetch = await fetch("https://api.kawalcovid19.id/v1/api/case/summary", {
+const loadData = async function () {
+  let doFetch = await fetch("https://api.kawalcorona.com/", {
     method: "GET",
-    mode: "cors"
   });
 
   let result = await doFetch.json();
 
-  document.getElementById("confirmed").innerText = result.confirmed;
-  document.getElementById("recovered").dinnerText = result.recovered;
-  document.getElementById("deceased").innerText = result.deceased;
-  document.getElementById("activeCare").innerText = result.activeCare;
+  result.filter((data) => {
+    if (data.attributes.Country_Region === "Indonesia") {
+      document.getElementById("confirmed").innerText =
+        data.attributes.Confirmed;
+      document.getElementById("recovered").innerText =
+        data.attributes.Recovered;
+      document.getElementById("deceased").innerText = data.attributes.Deaths;
+      document.getElementById("activeCare").innerText = data.attributes.Active;
 
-  let _date = new Date(result.metadata.lastUpdatedAt);
+      let _date = new Date(data.attributes.Last_Update);
 
-  document.getElementById("metadata").innerText = `${_date.getUTCDate()} ${
-    monthNames[_date.getMonth()]
-  } ${_date.getFullYear()} ${_date.getHours()}:${_date.getMinutes()}:${_date.getSeconds()}`;
+      document.getElementById("metadata").innerText = `${_date.getUTCDate()} ${
+        monthNames[_date.getMonth()]
+      } ${_date.getFullYear()} ${_date.getHours()}:${_date.getMinutes()}:${_date.getSeconds()}`;
+    }
+  });
 };
+
+loadData();
