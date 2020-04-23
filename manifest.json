@@ -10,11 +10,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "permissions": [
-    "storage",
-    "https://kawalcovid19.id/*",
-    "https://api.kawalcovid19.id/*"
-  ],
+  "permissions": ["https://kawalcorona.com/*", "https://api.kawalcorona.com/*"],
   "icons": {
     "128": "images/icon-128.png",
     "16": "images/icon-16.png",
